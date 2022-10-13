@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "176175791521",
+    "project_id": "gp-695a5",
+    "storage_bucket": "gp-695a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176175791521:android:690c76abd7a521e860dfe0",
+        "android_client_info": {
+          "package_name": "com.example.circlight"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176175791521-mhv382i3rv7k4587kg5pojklbb26au45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd2S485yBya9Y6TY5JvRPcomMsnY_Txnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176175791521-mhv382i3rv7k4587kg5pojklbb26au45.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "176175791521-2sgf6vn1ua9oh6honciodatdqk6lodig.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.circlight"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
