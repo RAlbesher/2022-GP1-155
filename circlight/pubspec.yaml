@@ -40,7 +40,8 @@ dependencies:
   firebase_auth: ^3.11.2
   cloud_firestore: ^3.5.1
   firebase_analytics: ^9.3.8
-
+  email_validator: '^2.1.16' #for email validation  
+  
 
 
   # The following adds the Cupertino Icons font to your application.

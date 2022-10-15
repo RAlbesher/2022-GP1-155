@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -10,14 +11,59 @@ Future main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   //end firebase connection
+
   runApp(const MyApp());
+  var coID = await AddParent();
+  AddStudent(coID);
+  //validateEmail();
 }
 
+AddStudent(colID) {
+  final userRef = FirebaseFirestore.instance.collection("Parent");
+  userRef.doc(colID).collection("Studet").add({
+    "BloodType": "lamaalmajhad",
+    "Class": "lamaalmajhad@outlook.com",
+    "Name": "lama school",
+    "Nationality": "False",
+    "StudentID": "first student",
+    "UserName": "سعودي",
+  });
+}
+
+AddParent() async {
+  final userRef = FirebaseFirestore.instance.collection("Parent");
+  var colectionID = await userRef.add({
+    "Email": "leen@outlook.com",
+    "JobTitle": "lama school",
+    "LateStatus": "False",
+    "Name": "renad",
+    "Nationality": "سعودي",
+    "ParentID": "P1",
+    "Password": "123456",
+    "PhoneNumber": "0554662852",
+    "UserName": "RenadAlbesher12345",
+  });
+  return colectionID.id;
+}
+
+//////////////this for email validation
+/*
+void validateEmail() {
+  final bool isValid = EmailValidator.validate("lamaalmajhad@outlook.com");
+
+  if (isValid) {
+    ScaffoldMessenger.of(context)
+        .showSnackBar((snackBar(content: Text("Valid Email"))));
+  }
+}
+*/
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   Widget build(BuildContext context) {
+    //here is a code for testing the connection with firebase only
     return MaterialApp(
       title: 'Flutter Firebase Demo',
       theme: ThemeData(
@@ -56,6 +102,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+//here is the end for testing the connection with firebase
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -141,4 +188,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-//the first change
